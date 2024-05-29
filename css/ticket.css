@@ -1,0 +1,150 @@
+.tickets {
+  margin: 20vh auto;
+}
+
+.heading-container {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.filter-bar {
+  width: 100%;
+  border-radius: 10px;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: var(--cream);
+  border: 2px solid rgba(51, 51, 51, 0.4);
+}
+
+#search-box {
+  width: 20vw;
+  padding: 5px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+}
+
+.col select,
+.col input {
+  width: 100%;
+  padding: 5px;
+  height: 30px;
+  margin: 5px auto;
+  border: none;
+  border-radius: 5px;
+}
+
+.input {
+  padding: 1px 5px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
+.ticket-list {
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+  height: 285px;
+  background: white;
+  padding: 0.4em;
+  border-radius: 10px;
+  transition: all 0.95s ease;
+}
+
+.active-card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.card-image {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.card-image2 {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px 10px 0 0;
+  background-size: cover;
+}
+
+.bnw-filter {
+  filter: grayscale(1) !important;
+}
+
+.tempat-tgl {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: var(--blue);
+  padding: 0 7px;
+}
+
+.heading {
+  font-weight: 600;
+  color: var(--black);
+  padding: 0 7px;
+}
+
+.modal-header {
+  /* border-bottom: 2px solid var(--bs-modal-header-border-color) !important; */
+  border-bottom: none !important;
+  background-color: var(--blue);
+  color: var(--cream);
+}
+
+.modal-body {
+  /* background-color: var(--cream); */
+}
+
+.modal-footer {
+  border-top: none !important;
+  /* background-color: var(--cream); */
+}
+
+.btn-buy:hover {
+  background: var(--green);
+}
+
+@media screen and (max-width: 991px) {
+  .card {
+    height: auto;
+  }
+
+  .tickets {
+    margin: 15vh auto;
+  }
+
+  .heading-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  #search-box {
+    width: 62.5vw;
+  }
+
+  .col select,
+  .col input {
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .col select,
+  .col input {
+    height: 30px;
+  }
+}
+
+@media screen and (min-height: 1300px) {
+  .tickets {
+    margin: 10vh auto;
+  }
+}

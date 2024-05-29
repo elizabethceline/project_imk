@@ -1,0 +1,32 @@
+.box-events {
+  width: 40vw;
+  display: flex;
+}
+
+.event-poster {
+  width: 20vw;
+  height: 20vw;
+}
+
+.arrow-svg2 {
+  width: 2vw;
+  height: 2vw;
+}
+
+@media screen and (max-width: 991px) {
+  .event-poster {
+    width: auto;
+    height: auto;
+  }
+
+  .box-events {
+    width: 80vw;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .arrow-svg2 {
+    width: 4vw;
+    height: 4vw;
+  }
+}

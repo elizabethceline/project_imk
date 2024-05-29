@@ -1,0 +1,9 @@
+.img-ticket {
+  width: 100%;
+}
+
+.line2 {
+  width: 100%;
+  height: 2px;
+  background: var(--cream);
+}

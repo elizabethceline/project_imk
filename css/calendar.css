@@ -1,0 +1,51 @@
+.month {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.month:hover {
+  scale: 1.15;
+  color: var(--yellow);
+}
+
+.block-event {
+  height: 12vh;
+  transition: all 0.3s ease-in-out;
+}
+
+.kiri {
+  width: 25%;
+  height: 100%;
+  background: var(--yellow);
+  color: var(--black);
+}
+
+.kanan {
+  width: 75%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.line {
+  width: 80vw;
+  height: 1px;
+  background: var(--cream);
+}
+
+.month-active {
+  scale: 1.15;
+  color: var(--yellow);
+}
+
+@media screen and (max-width: 450px) {
+  .block-event {
+    height: 8vh;
+  }
+}
+
+@media screen and (min-height: 1300px) {
+  .block-event {
+    height: 5vh;
+  }
+}
