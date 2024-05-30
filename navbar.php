@@ -25,13 +25,13 @@
                 if (!isset($_SESSION['user'])) {
                     echo '<ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item mx-3 mx-lg-0 me-lg-3">
-                            <a class="nav-link text-white" aria-current="page" href="login.php"><i class="fa-solid fa-user fa-md logo-user" style="color: var(--cream);"></i> <b> JOIN US NOW!</b></a>
+                            <a class="nav-link text-white" aria-current="page" href="login.php"><i class="fa-solid fa-user fa-md logo-user" style="color: var(--cream); "></i> <span style="font-weight: 700;"> JOIN US NOW!</span></a>
                         </li>
                     </ul>';
                 } else {
                     echo '<ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item mx-3 mx-lg-0 me-lg-3">
-                            <a class="nav-link text-white" aria-current="page" href="#" id="logout-link"><i class="fa-solid fa-right-from-bracket fa-md logo-user" style="color: var(--cream);"></i> <b> LOG OUT</b></a>
+                            <a class="nav-link text-white" aria-current="page" href="#" id="logout-link"><i class="fa-solid fa-right-from-bracket fa-md logo-user" style="color: var(--cream); "></i> <span style="font-weight: 700;"> LOG OUT</span></a>
                         </li>
                     </ul>';
                 }
