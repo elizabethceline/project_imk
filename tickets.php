@@ -92,7 +92,7 @@ if (!isset($_SESSION['user'])) {
                     $tanggal = date("j M Y", strtotime($tanggal));
                     $jam = date("H:i", strtotime($jam));
 
-                    echo '<div class="col col-12 col-lg-3 card-col" id="ticket1" data-id="' . $id . '" data-stock="' . ($status == "1" ? "available" : "outofstock") . '" data-price="' . $harga . '" data-date="' . $tanggal . '" data-place="' . $tempat . '" data-name="' . $nama . '" data-kategori="' . $kategori . '">
+                    echo '<div class="col col-12 col-lg-3 card-col" id="ticket1" data-id="' . $id . '" data-stock="' . ($status == "1" ? "available" : "outofstock") . '" data-price="' . $harga . '" data-date="' . $row["tanggal"] . '" data-place="' . $tempat . '" data-name="' . $nama . '" data-kategori="' . $kategori . '">
                             <div class="card my-2';
 
                     if ($status == 0) {
@@ -202,7 +202,7 @@ if (!isset($_SESSION['user'])) {
                             <p id="modal-concert-date"></p>
                             <p id="modal-concert-place"></p>
                             <p id="modal-concert-category"></p>
-                            <input type="number" name="" id="jumlah-tiket" placeholder="" class="input w-25" min="1" max="10">
+                            <input type="number" name="" id="jumlah-tiket" placeholder="" class="input w-25" min="1">
                         </div>
                     </div>
                     <div class="modal-footer pt-0">
