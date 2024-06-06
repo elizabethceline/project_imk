@@ -257,7 +257,28 @@ if (!isset($_SESSION['user'])) {
                 }
 
                 $('.ticket-list').html($tickets);
+                $('.no-tickets').remove();
+
+                if ($tickets.filter(':visible').length === 0) {
+                    $('.ticket-list').append(`<div class='container list-ticket'>
+            <div class='notifications-container text-para2'>
+                <div class='alert'>
+                    <div class='flex'>
+                        <div class='flex-shrink-0'>
+                            <i class='fa-solid fa-triangle-exclamation' style='color: #f3d568;'></i>
+                        </div>
+                        <div class='alert-prompt-wrap'>
+                            <p>
+                                No tickets available!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`);
+                }
             });
+
 
             function checkPrice(selectedPrice, ticketPrice) {
                 switch (selectedPrice) {
