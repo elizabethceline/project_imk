@@ -114,7 +114,10 @@ $konser = $stmt->fetch();
                     </label>
                 </div>
 
-                <button class="submit text-para2 mt-4"><b>Confirm</b></button>
+                <div class="flex">
+                    <button class="btn btn-secondary btn-confirm text-para2 mt-4 w-50"><b>Cancel</b></button>
+                    <button class="btn-confirm submit text-para2 mt-lg-4 w-50"><b>Confirm</b></button>
+                </div>
             </form>
         </div>
 
