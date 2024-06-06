@@ -136,31 +136,31 @@
         var pass8 = false;
 
         function cekPanjang() {
-            var newPass = $("#password").val()
+            var newPass = $("#password").val();
             if (newPass.length >= 8) {
-                $('.minlength').css('display', 'none')
-                pass8 = true
+                $('.minlength').css('display', 'none');
+                pass8 = true;
             } else {
-                $('.minlength').css('display', 'block')
-                pass8 = false
+                $('.minlength').css('display', 'block');
+                pass8 = false;
             }
-            cekMatch()
+            cekMatch();
         }
 
         function cekMatch() {
-            if (pass8 == true) {
-                var newPass = $("#password").val()
-                var retypePass = $("#password2").val()
-                if (newPass == retypePass) {
-                    $('.submit').prop('disabled', false)
-                    $('.notmatch').css('display', 'none')
-                } else {
-                    $('.notmatch').css('display', 'block')
-                    $('.submit').prop('disabled', true)
-                }
+            var newPass = $("#password").val();
+            var retypePass = $("#password2").val();
 
+            if (pass8 && retypePass !== '') {
+                if (newPass === retypePass) {
+                    $('.submit').prop('disabled', false);
+                    $('.notmatch').css('display', 'none');
+                } else {
+                    $('.notmatch').css('display', 'block');
+                    $('.submit').prop('disabled', true);
+                }
             } else {
-                $('.notmatch').css('display', 'none')
+                $('.notmatch').css('display', 'none');
             }
         }
     </script>
