@@ -101,16 +101,18 @@
   font-weight: 600;
 }
 
-.submit {
+.btn-confirm {
   border: none;
   outline: none;
   padding: 10px;
   border-radius: 10px;
-  color: var(--cream);
   transform: 0.3s ease;
-  background-color: var(--yellow);
-  color: var(--black);
   transition: all 0.3s ease;
+}
+
+.submit {
+  color: var(--black);
+  background-color: var(--yellow);
 }
 
 .submit:hover {
@@ -149,6 +151,10 @@
 }
 
 @media screen and (max-width: 450px) {
+  .form label .input:read-only + span {
+    font-size: 0.8em !important;
+  }
+
   .form label .input:focus + span,
   .form label .input:valid + span {
     top: 5px;
