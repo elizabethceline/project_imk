@@ -179,7 +179,7 @@ if (!isset($_SESSION['user'])) {
                 </div>
                 <form class="form" id="ticket_form" method="POST">
                     <div class="modal-body text-para2 d-flex justify-content-between">
-                        <div class="d-flex flex-column w-25">
+                        <div class="d-flex flex-column col1">
                             <p>Concert Name</p>
                             <p>Price</p>
                             <p>Date</p>
@@ -187,7 +187,7 @@ if (!isset($_SESSION['user'])) {
                             <p>Category</p>
                             <p>Quantity</p>
                         </div>
-                        <div class="d-flex flex-column" style="width: 5%;">
+                        <div class="d-flex flex-column col2">
                             <p>:</p>
                             <p>:</p>
                             <p>:</p>
@@ -195,7 +195,7 @@ if (!isset($_SESSION['user'])) {
                             <p>:</p>
                             <p>:</p>
                         </div>
-                        <div class="d-flex flex-column" style="width: 70%;">
+                        <div class="d-flex flex-column col3">
                             <p id="modal-concert-id" style="display: none;"></p>
                             <p id="modal-concert-name"></p>
                             <p id="modal-concert-price"></p>

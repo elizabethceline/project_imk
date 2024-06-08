@@ -110,6 +110,18 @@
   background: var(--green);
 }
 
+.col1 {
+  width: 25%;
+}
+
+.col2 {
+  width: 5%;
+}
+
+.col3 {
+  width: 70%;
+}
+
 @media screen and (max-width: 991px) {
   .card {
     height: auto;
@@ -134,12 +146,20 @@
   .col input {
     height: 40px;
   }
+
+  .col1, .col2, .col3 {
+    font-size: 1rem !important;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .col select,
   .col input {
     height: 30px;
+  }
+
+  .col1, .col2, .col3 {
+    font-size: 3vw !important;
   }
 }
 
