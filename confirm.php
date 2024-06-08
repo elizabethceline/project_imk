@@ -115,8 +115,8 @@ $konser = $stmt->fetch();
                 </div>
 
                 <div class="flex">
-                    <button class="btn btn-secondary btn-confirm text-para2 mt-4 w-50"><b>Cancel</b></button>
-                    <button class="btn-confirm submit text-para2 mt-lg-4 w-50"><b>Confirm</b></button>
+                    <button class="btn btn-secondary btn-confirm cancel text-para2 mt-4 w-50" type="button"><b>Cancel</b></button>
+                    <button class="btn-confirm submit text-para2 mt-lg-4 w-50" type="submit"><b>Confirm</b></button>
                 </div>
             </form>
         </div>
@@ -126,72 +126,78 @@ $konser = $stmt->fetch();
     <?php include "footer.php" ?>
 
     <script>
-        $("#buy-form").on("submit", function(e) {
-            e.preventDefault();
-            var kategori = "<?php echo $_SESSION["kategori"]; ?>";
-            var jumlah = "<?php echo $_SESSION["jumlah"]; ?>";
-            var id_tiket = "<?php echo $_SESSION["id_konser"]; ?>";
-            var id_user = "<?php echo $_SESSION["user"]; ?>";
+        $(document).ready(function() {
+            $("#buy-form").on("submit", function(e) {
+                e.preventDefault();
+                var kategori = "<?php echo $_SESSION["kategori"]; ?>";
+                var jumlah = "<?php echo $_SESSION["jumlah"]; ?>";
+                var id_tiket = "<?php echo $_SESSION["id_konser"]; ?>";
+                var id_user = "<?php echo $_SESSION["user"]; ?>";
 
-            Swal.fire({
-                icon: 'warning',
-                title: 'Are you sure?',
-                text: 'Do you want to proceed with the purchase?',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Sure',
-                cancelButtonText: 'Cancel'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $.ajax({
-                        method: "POST",
-                        url: "buy_function.php",
-                        data: {
-                            kategori: kategori,
-                            jumlah: jumlah,
-                            id_tiket: id_tiket,
-                            id_user: id_user,
-                        },
-                        success: (e) => {
-                            if (!e.success && e.message != null) {
-                                Swal.fire({
-                                    title: 'Error!',
-                                    text: e.message,
-                                    icon: 'error',
-                                })
-                            } else if (e.success && e.message != null) {
-                                Swal.fire({
-                                    title: 'Success!',
-                                    text: e.message,
-                                    icon: 'success',
-                                    showConfirmButton: false,
-                                    timerProgressBar: true,
-                                    timer: 3000,
-                                    willClose: () => {
-                                        window.location.href = 'history.php';
-                                    }
-                                });
-                                document.getElementById("buy-form").reset();
-                            } else {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Are you sure?',
+                    text: 'Do you want to proceed with the purchase?',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sure',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            method: "POST",
+                            url: "buy_function.php",
+                            data: {
+                                kategori: kategori,
+                                jumlah: jumlah,
+                                id_tiket: id_tiket,
+                                id_user: id_user,
+                            },
+                            success: (e) => {
+                                if (!e.success && e.message != null) {
+                                    Swal.fire({
+                                        title: 'Error!',
+                                        text: e.message,
+                                        icon: 'error',
+                                    })
+                                } else if (e.success && e.message != null) {
+                                    Swal.fire({
+                                        title: 'Success!',
+                                        text: e.message,
+                                        icon: 'success',
+                                        showConfirmButton: false,
+                                        timerProgressBar: true,
+                                        timer: 3000,
+                                        willClose: () => {
+                                            window.location.href = 'history.php';
+                                        }
+                                    });
+                                    document.getElementById("buy-form").reset();
+                                } else {
+                                    Swal.fire({
+                                        title: 'Error!',
+                                        text: 'Silahkan coba lagi',
+                                        icon: 'error',
+                                    })
+                                }
+                            },
+                            error: function(error) {
                                 Swal.fire({
                                     title: 'Error!',
                                     text: 'Silahkan coba lagi',
                                     icon: 'error',
                                 })
                             }
-                        },
-                        error: function(error) {
-                            Swal.fire({
-                                title: 'Error!',
-                                text: 'Silahkan coba lagi',
-                                icon: 'error',
-                            })
-                        }
-                    })
-                }
+                        })
+                    }
+                });
+            })
+
+            $('.cancel').on('click', function() {
+                window.location.href = "tickets.php";
             });
-        })
+        });
     </script>
 </body>
 
