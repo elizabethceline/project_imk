@@ -152,7 +152,10 @@ if (!isset($_SESSION['user'])) {
                     <h1 class="modal-title fs-5 text-para" id="priceModalLabel">Ticket Details</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-para2 d-flex justify-content-between">
+                <div class="modal-body text-para2 d-flex flex-column justify-content-center align-items-center">
+                    <div class="w-100 d-flex justify-content-center mb-3" id="img-output">
+                        
+                    </div>
                     <table class="table text-center">
                         <thead>
                             <tr>
@@ -315,6 +318,24 @@ if (!isset($_SESSION['user'])) {
                     $('#modal-concert-place').text(ticketPlace);
 
                     var highest_price = parseInt(ticketPrice) + ((ticketCategory - 1) * 500000);
+
+                    if (ticketCategory == 3) {
+                        $('#img-output').html(`
+                        <img src="img/cat2.png" alt="" class="w-75">
+                        `);
+                    } else if (ticketCategory == 4) {
+                        $('#img-output').html(`
+                        <img src="img/cat3.png" alt="" class="w-75">
+                        `);
+                    } else if (ticketCategory == 5) {
+                        $('#img-output').html(`
+                        <img src="img/cat4.png" alt="" class="w-75">
+                        `);
+                    } else if (ticketCategory == 6) {
+                        $('#img-output').html(`
+                        <img src="img/cat5.png" alt="" class="w-75">
+                        `);
+                    }
 
                     $('#kategori-output').html(`
                 <tr>
