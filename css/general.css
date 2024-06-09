@@ -149,6 +149,10 @@ section {
   font-size: 1vw;
 }
 
+.hidden {
+  display: none !important;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,

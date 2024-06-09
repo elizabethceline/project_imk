@@ -44,9 +44,46 @@
   stroke: var(--black);
 }
 
+.btn-back {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  transform: 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.detail-genre {
+  display: flex;
+  gap: 16px;
+}
+
+.img-genre {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+}
+
+.img-genre img {
+  width: 100%;
+  object-fit: cover; 
+}
+
+.text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+
 @media screen and (max-width: 991px) {
   .arrow-svg {
     width: 5vw;
     height: 5vw;
+  }
+
+  .detail-genre {
+    flex-direction: column;
   }
 }
